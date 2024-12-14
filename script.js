@@ -1,74 +1,43 @@
-/* Impostazioni generali */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #eaeaea;
-}
+// Funzione per ingrandire il tablet
+document.getElementById('zoomIn').addEventListener('click', function () {
+    const container = document.getElementById('emulator-container');
+    const currentWidth = parseInt(window.getComputedStyle(container).width);
+    const currentHeight = parseInt(window.getComputedStyle(container).height);
 
-/* Contenitore principale */
-#app-container {
-    text-align: center;
-}
+    // Aumenta le dimensioni del tablet
+    container.style.width = `${currentWidth * 1.1}px`;
+    container.style.height = `${currentHeight * 1.1}px`;
+});
 
-/* Emulator container (tablet virtuale) */
-#emulator-container {
-    width: 375px;
-    height: 667px;
-    background-color: #222;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s, width 0.3s, height 0.3s;
-}
+// Funzione per ruotare il tablet
+document.getElementById('rotate').addEventListener('click', function () {
+    const container = document.getElementById('emulator-container');
+    const currentRotation = container.style.transform;
+    container.style.transform = currentRotation === 'rotate(90deg)' ? 'rotate(0deg)' : 'rotate(90deg)';
+});
 
-/* Schermo dell'emulatore */
-#screen {
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    border-radius: 20px;
-}
+// Funzione per salvare l'account
+document.getElementById('saveAccount').addEventListener('click', function () {
+    const username = document.getElementById('username').value.trim();
+    const status = document.getElementById('status');
 
-/* Controlli */
-#controls {
-    margin-top: 20px;
-}
+    if (username) {
+        localStorage.setItem('account', username);
+        status.textContent = `Account salvato: ${username}`;
+        status.style.color = 'green';
+    } else {
+        status.textContent = 'Inserisci un nome utente valido.';
+        status.style.color = 'red';
+    }
+});
 
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#username {
-    padding: 10px;
-    font-size: 16px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#status {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-}
+// Carica l'account salvato al caricamento della pagina
+window.addEventListener('load', function () {
+    const savedUsername = localStorage.getItem('account');
+    const status = document.getElementById('status');
+    if (savedUsername) {
+        document.getElementById('username').value = savedUsername;
+        status.textContent = `Account caricato: ${savedUsername}`;
+        status.style.color = 'blue';
+    }
+});
