@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emulatore Android con Waydroid</title>
+    <title>Emulatore Android</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Emulatore Android - Waydroid</h1>
-        <div id="emulator-container" class="tablet">
-            <!-- Qui viene visualizzato il contenuto dell'emulatore (VNC) -->
-            <div id="vnc-container"></div>
+    <div id="emulator-container">
+        <div id="emulator">
+            <div id="screen">
+                <!-- L'emulatore verrà visualizzato qui -->
+            </div>
         </div>
-        <div id="controls">
-            <button id="toggleOrientation">Ruota</button>
-            <button id="togglePower">Accendi</button>
-            <button id="zoomIn">Ingrandisci</button>
-        </div>
+        <button id="zoomIn">Ingrandisci</button>
+        <button id="rotate">Ruota</button>
     </div>
-
-    <!-- Script -->
-    <script src="noVNC/noVNC.js"></script>
+    <div id="account-section">
+        <h3>Account</h3>
+        <input type="text" id="username" placeholder="Inserisci il tuo nome">
+        <button id="saveAccount">Salva Account</button>
+        <p id="accountStatus"></p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
