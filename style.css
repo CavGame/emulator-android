@@ -12,8 +12,8 @@ body {
     background-color: #000;
     border-radius: 30px; /* Angoli arrotondati per la forma del tablet */
     padding: 20px;
-    width: 450px; /* Dimensione di base */
-    height: 700px; /* Dimensione di base */
+    width: 450px; /* Dimensione iniziale */
+    height: 700px; /* Dimensione iniziale */
     text-align: center;
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -58,20 +58,4 @@ body {
 #controls button:disabled {
     background-color: #ddd;
     cursor: not-allowed;
-}
-
-/* Media query per modalità orizzontale */
-@media (orientation: landscape) {
-    #emulator-container {
-        width: 600px; /* Tablet più grande quando ruotato */
-        height: 400px;
-    }
-}
-
-/* Media query per modalità verticale */
-@media (orientation: portrait) {
-    #emulator-container {
-        width: 450px; /* Tablet più piccolo in verticale */
-        height: 700px;
-    }
 }
