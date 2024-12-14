@@ -10,19 +10,29 @@ body {
 
 #emulator-container {
     background-color: #000;
-    border-radius: 10px;
+    border-radius: 30px; /* Angoli arrotondati per la forma del tablet */
     padding: 20px;
     width: 400px;
+    height: 650px;
     text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Ombra per far sembrare il tablet più realistico */
 }
 
 #screen {
     background-color: #222;
     width: 100%;
-    height: 300px;
-    border-radius: 10px;
+    height: 90%; /* Lo schermo occupa la maggior parte del tablet */
+    border-radius: 10px; /* Angoli dello schermo */
     margin-bottom: 20px;
     position: relative;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 #controls button {
@@ -36,4 +46,12 @@ body {
 
 #controls button:hover {
     background-color: #45a049;
+}
+#emulator-container {
+    border: 5px solid #333; /* Bordi più scuri per un effetto tablet */
+    background: linear-gradient(145deg, #444444, #333333); /* Un leggero gradiente per l'effetto riflesso */
+}
+
+#screen {
+    background: #1e1e1e; /* Colore scuro dello schermo per l'aspetto realistico */
 }
