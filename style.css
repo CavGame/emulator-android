@@ -11,9 +11,9 @@ body {
 #emulator-container {
     background-color: #000;
     border-radius: 30px; /* Angoli arrotondati per la forma del tablet */
-    padding: 20px;
-    width: 400px;
-    height: 650px;
+    padding: 40px; /* Aggiungi più padding per aumentare le dimensioni */
+    width: 600px; /* Aumenta la larghezza */
+    height: 900px; /* Aumenta l'altezza */
     text-align: center;
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -33,17 +33,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px; /* Spaziatura maggiore per il tasto */
 }
 
 #controls button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Aumenta la dimensione dei tasti */
     cursor: pointer;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 0 10px;
     transition: background-color 0.3s;
 }
 
