@@ -1,32 +1,76 @@
-// Funzione per ruotare il tablet
-document.getElementById('toggleOrientation').addEventListener('click', function() {
-    const container = document.getElementById('emulator-container');
-    if (container.style.transform === "rotate(90deg)") {
-        container.style.transform = "rotate(0deg)";
-    } else {
-        container.style.transform = "rotate(90deg)";
-    }
-});
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
 
-// Funzione per accendere/spegnere il tablet
-document.getElementById('togglePower').addEventListener('click', function() {
-    const button = document.getElementById('togglePower');
-    if (button.textContent === "Accendi") {
-        button.textContent = "Spegni";
-        // Aggiungi altre azioni per simulare l'accensione
-    } else {
-        button.textContent = "Accendi";
-        // Aggiungi altre azioni per simulare lo spegnimento
-    }
-});
+#emulator-container {
+    width: 375px;
+    height: 667px;
+    background-color: #222;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s, height 0.3s;
+}
 
-// Funzione per ingrandire il tablet
-document.getElementById('zoomIn').addEventListener('click', function() {
-    const container = document.getElementById('emulator-container');
-    const currentWidth = parseInt(window.getComputedStyle(container).width);
-    const currentHeight = parseInt(window.getComputedStyle(container).height);
-    
-    // Aumenta la dimensione del tablet di 10%
-    container.style.width = `${currentWidth * 1.1}px`;
-    container.style.height = `${currentHeight * 1.1}px`;
-});
+#emulator {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 10px;
+    position: relative;
+}
+
+#screen {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#account-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#username {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#saveAccount {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#saveAccount:hover {
+    background-color: #45a049;
+}
