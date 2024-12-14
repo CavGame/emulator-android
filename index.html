@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emulatore Android</title>
+    <title>Emulatore Android con Waydroid</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="emulator-container">
-        <div id="screen">
-            <!-- Aggiungi il contenuto dell'emulatore qui -->
+    <div class="container">
+        <h1>Emulatore Android - Waydroid</h1>
+        <div id="emulator-container" class="tablet">
+            <!-- Qui viene visualizzato il contenuto dell'emulatore (VNC) -->
+            <div id="vnc-container"></div>
         </div>
         <div id="controls">
             <button id="toggleOrientation">Ruota</button>
             <button id="togglePower">Accendi</button>
-            <button id="zoomIn">Ingrandisci</button> <!-- Pulsante per ingrandire -->
+            <button id="zoomIn">Ingrandisci</button>
         </div>
     </div>
 
-    <!-- Sposta il JavaScript alla fine per evitare errori di DOM -->
+    <!-- Script -->
+    <script src="noVNC/noVNC.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-<iframe src="gh repo clone waydroid/waydroid" width="100%" height="600px" frameborder="0"></iframe>
