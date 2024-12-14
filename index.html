@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app-container">
-        <div id="emulator-container">
-            <div id="screen">Benvenuto nell'Emulatore!</div>
-        </div>
-        <div id="controls">
-            <button id="zoomIn">Ingrandisci</button>
-            <button id="rotate">Ruota</button>
-            <input type="text" id="username" placeholder="Inserisci il tuo account">
-            <button id="saveAccount">Salva Account</button>
-            <p id="status"></p>
+    <div id="emulator-container">
+        <div id="emulator">
+            <div id="screen"></div>
         </div>
     </div>
-    <script src="script.js" defer></script>
+
+    <div id="controls">
+        <button id="zoomIn">Ingrandisci</button>
+        <button id="rotate">Ruota</button>
+        <button id="togglePower">Accendi</button>
+    </div>
+
+    <div id="account-section">
+        <input type="text" id="username" placeholder="Inserisci il tuo nome utente">
+        <button id="saveAccount">Salva Account</button>
+        <p id="accountStatus"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
